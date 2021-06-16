@@ -1,2 +1,1 @@
-# Restaurant reservation app.
-# Developed by BrainArchy
+# Restaurant reservation app by BrainArchy
