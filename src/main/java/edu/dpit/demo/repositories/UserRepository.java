@@ -4,7 +4,9 @@ import edu.dpit.demo.models.UsersBE;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UserRepository extends CrudRepository<UsersBE, Integer> {
+import java.util.Optional;
 
+@Repository
+public interface UserRepository extends CrudRepository<UsersBE, Long> {
+    Optional<UsersBE> findByEmail(String email);
 }

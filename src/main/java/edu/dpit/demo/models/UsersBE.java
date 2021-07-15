@@ -7,14 +7,14 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="users")
+@Table(name= "users")
 @Getter
 @Setter
 public class UsersBE {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_U")
-    private Integer codU;
+    private Long codU;
 
     private String email;
     @Column(name = "nume_prenume")
