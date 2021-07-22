@@ -40,4 +40,12 @@ public class UsersBE {
     public int hashCode() {
         return Objects.hash(codU, email, numePrenume, telefon, username, password);
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setCodU(Long codU) {
+        this.codU = codU;
+    }
 }
