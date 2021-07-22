@@ -1,0 +1,27 @@
+{
+  "restaurantReservationApp": {
+    "mese": {
+      "home": {
+        "title": "Mese",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mese",
+        "createOrEditLabel": "Create or edit a Mese",
+        "notFound": "No Mese found"
+      },
+      "created": "A new Mese is created with identifier {{ param }}",
+      "updated": "A Mese is updated with identifier {{ param }}",
+      "deleted": "A Mese is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mese {{ id }}?"
+      },
+      "detail": {
+        "title": "Mese"
+      },
+      "id": "ID",
+      "nrLoc": "Nr Loc",
+      "outdoor": "Outdoor",
+      "restaurants": "Restaurants",
+      "reservation": "Reservation"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "restaurantReservationApp": {
+    "reservation": {
+      "home": {
+        "title": "Reservations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Reservation",
+        "createOrEditLabel": "Creeare sau editare Reservation",
+        "notFound": "No Reservations found"
+      },
+      "created": "A fost creată o nouă entitate Reservation cu identificatorul {{ param }}",
+      "updated": "Reservation cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Reservation cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Reservation {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservation"
+      },
+      "id": "ID",
+      "scrumiera": "Scrumiera",
+      "nrPers": "Nr Pers",
+      "startDatetime": "Start Datetime",
+      "endDateime": "End Dateime",
+      "mese": "Mese"
+    }
+  }
+}

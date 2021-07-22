@@ -1,0 +1,38 @@
+{
+  "name": "Mese",
+  "fields": [
+    {
+      "fieldName": "nrLoc",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outdoor",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "restaurants",
+      "otherEntityRelationshipName": "mese",
+      "relationshipName": "restaurants"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "reservation",
+      "otherEntityRelationshipName": "mese",
+      "relationshipName": "reservation",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "mese",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210722151539"
+}

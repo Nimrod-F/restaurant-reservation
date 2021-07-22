@@ -1,0 +1,27 @@
+{
+  "restaurantReservationApp": {
+    "mese": {
+      "home": {
+        "title": "Mese",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Mese",
+        "createOrEditLabel": "Creeare sau editare Mese",
+        "notFound": "No Mese found"
+      },
+      "created": "A fost creată o nouă entitate Mese cu identificatorul {{ param }}",
+      "updated": "Mese cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Mese cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Mese {{ id }}?"
+      },
+      "detail": {
+        "title": "Mese"
+      },
+      "id": "ID",
+      "nrLoc": "Nr Loc",
+      "outdoor": "Outdoor",
+      "restaurants": "Restaurants",
+      "reservation": "Reservation"
+    }
+  }
+}

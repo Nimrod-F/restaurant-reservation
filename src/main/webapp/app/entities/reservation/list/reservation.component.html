@@ -1,0 +1,91 @@
+<div>
+  <h2 id="page-heading" data-cy="ReservationHeading">
+    <span jhiTranslate="restaurantReservationApp.reservation.home.title">Reservations</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="restaurantReservationApp.reservation.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-reservation"
+        [routerLink]="['/reservation/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="restaurantReservationApp.reservation.home.createLabel"> Create a new Reservation </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="reservations?.length === 0">
+    <span jhiTranslate="restaurantReservationApp.reservation.home.notFound">No reservations found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="reservations && reservations.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="restaurantReservationApp.reservation.scrumiera">Scrumiera</span></th>
+          <th scope="col"><span jhiTranslate="restaurantReservationApp.reservation.nrPers">Nr Pers</span></th>
+          <th scope="col"><span jhiTranslate="restaurantReservationApp.reservation.startDatetime">Start Datetime</span></th>
+          <th scope="col"><span jhiTranslate="restaurantReservationApp.reservation.endDateime">End Dateime</span></th>
+          <th scope="col"><span jhiTranslate="restaurantReservationApp.reservation.mese">Mese</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/reservation', reservation.id, 'view']">{{ reservation.id }}</a>
+          </td>
+          <td>{{ reservation.scrumiera }}</td>
+          <td>{{ reservation.nrPers }}</td>
+          <td>{{ reservation.startDatetime | formatMediumDatetime }}</td>
+          <td>{{ reservation.endDateime | formatMediumDatetime }}</td>
+          <td>
+            <span *ngFor="let mese of reservation.mese; let last = last">
+              <a class="form-control-static" [routerLink]="['/mese', mese.id, 'view']">{{ mese.id }}</a
+              >{{ last ? '' : ', ' }}
+            </span>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/reservation', reservation.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/reservation', reservation.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(reservation)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

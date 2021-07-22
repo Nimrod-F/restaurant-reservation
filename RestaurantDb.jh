@@ -1,0 +1,57 @@
+
+entity Mese {
+    nrLoc Integer,
+    outdoor Boolean,
+}
+
+entity Reservation {
+    scrumiera Boolean,
+    nrPers Integer,
+    startDatetime Instant ,
+    endDateime Instant
+}
+
+entity Restaurants {
+	location String,
+	name String,
+	description String,
+    image Blob
+}
+
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+
+/**
+ * The Employee entity.
+ */
+
+
+
+
+
+relationship ManyToMany {
+	Reservation{mese} to Mese{reservation}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Mese to Restaurants{mese},
+}
+
+
+
+// Set pagination options
+paginate Restaurants with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+filter *
+dto * with mapstruct
+// Set an angular suffix
+// angularSuffix * with mySuffix

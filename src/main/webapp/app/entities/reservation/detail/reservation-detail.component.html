@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reservation">
+      <h2 data-cy="reservationDetailsHeading"><span jhiTranslate="restaurantReservationApp.reservation.detail.title">Reservation</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reservation.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantReservationApp.reservation.scrumiera">Scrumiera</span></dt>
+        <dd>
+          <span>{{ reservation.scrumiera }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantReservationApp.reservation.nrPers">Nr Pers</span></dt>
+        <dd>
+          <span>{{ reservation.nrPers }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantReservationApp.reservation.startDatetime">Start Datetime</span></dt>
+        <dd>
+          <span>{{ reservation.startDatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantReservationApp.reservation.endDateime">End Dateime</span></dt>
+        <dd>
+          <span>{{ reservation.endDateime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantReservationApp.reservation.mese">Mese</span></dt>
+        <dd>
+          <span *ngFor="let mese of reservation.mese; let last = last">
+            <a [routerLink]="['/mese', mese?.id, 'view']">{{ mese.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reservation', reservation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

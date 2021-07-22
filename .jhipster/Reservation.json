@@ -1,0 +1,40 @@
+{
+  "name": "Reservation",
+  "fields": [
+    {
+      "fieldName": "scrumiera",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "nrPers",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startDatetime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDateime",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "mese",
+      "otherEntityRelationshipName": "reservation",
+      "relationshipName": "mese",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "reservation",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210722151540"
+}

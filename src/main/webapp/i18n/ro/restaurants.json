@@ -1,0 +1,28 @@
+{
+  "restaurantReservationApp": {
+    "restaurants": {
+      "home": {
+        "title": "Restaurants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Restaurants",
+        "createOrEditLabel": "Creeare sau editare Restaurants",
+        "notFound": "No Restaurants found"
+      },
+      "created": "A fost creată o nouă entitate Restaurants cu identificatorul {{ param }}",
+      "updated": "Restaurants cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Restaurants cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Restaurants {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurants"
+      },
+      "id": "ID",
+      "location": "Location",
+      "name": "Name",
+      "description": "Description",
+      "image": "Image",
+      "mese": "Mese"
+    }
+  }
+}
