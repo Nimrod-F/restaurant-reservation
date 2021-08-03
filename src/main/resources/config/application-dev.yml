@@ -34,7 +34,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/RestaurantReservation?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: password
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -44,6 +44,18 @@ spring:
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+      #hibernate.hbm2ddl.auto: update
+      hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.BeanClassLoaderAwareJCacheRegionFactory
+      hibernate.jdbc.time_zone: Europe/Bucharest
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
