@@ -10,10 +10,12 @@ import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants
 import { RestaurantsService } from '../service/restaurants.service';
 import { RestaurantsDeleteDialogComponent } from '../delete/restaurants-delete-dialog.component';
 import { DataUtils } from 'app/core/util/data-util.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'jhi-restaurants',
   templateUrl: './restaurants.component.html',
+  styleUrls: ['./restaurants.component.scss'],
 })
 export class RestaurantsComponent implements OnInit {
   restaurants?: IRestaurants[];
@@ -30,7 +32,8 @@ export class RestaurantsComponent implements OnInit {
     protected activatedRoute: ActivatedRoute,
     protected dataUtils: DataUtils,
     protected router: Router,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    protected sanitizer: DomSanitizer
   ) {}
 
   loadPage(page?: number, dontNavigate?: boolean): void {
@@ -124,4 +127,9 @@ export class RestaurantsComponent implements OnInit {
   protected onError(): void {
     this.ngbPaginationPage = this.page ?? 1;
   }
+
+  // convertImage(blob : string) {
+  //   let objectURL = 'data:image/png;base64' + URL.createObjectURL(blob);
+  //   return this.sanitizer.bypassSecurityTrustUrl(objectURL);
+  // }
 }
