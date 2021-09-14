@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Restaurants",
         "createOrEditLabel": "Create or edit a Restaurants",
-        "notFound": "No Restaurants found"
+        "notFound": "No Restaurants found",
+        "reserve": "RESERVE"
       },
       "created": "A new Restaurants is created with identifier {{ param }}",
       "updated": "A Restaurants is updated with identifier {{ param }}",

@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Creeare o nouă entitate Restaurants",
         "createOrEditLabel": "Creeare sau editare Restaurants",
-        "notFound": "No Restaurants found"
+        "notFound": "No Restaurants found",
+        "reserve": "REZERVARE"
       },
       "created": "A fost creată o nouă entitate Restaurants cu identificatorul {{ param }}",
       "updated": "Restaurants cu identificatorul {{ param }} a fost actualizată",

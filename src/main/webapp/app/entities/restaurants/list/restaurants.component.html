@@ -28,82 +28,110 @@
     <span jhiTranslate="restaurantReservationApp.restaurants.home.notFound">No restaurants found</span>
   </div>
 
-  <div class="table-responsive" id="entities" *ngIf="restaurants && restaurants.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="location">
-            <span jhiTranslate="restaurantReservationApp.restaurants.location">Location</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="name">
-            <span jhiTranslate="restaurantReservationApp.restaurants.name">Name</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="description">
-            <span jhiTranslate="restaurantReservationApp.restaurants.description">Description</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="image">
-            <span jhiTranslate="restaurantReservationApp.restaurants.image">Image</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="mese.id">
-            <span jhiTranslate="restaurantReservationApp.restaurants.mese">Mese</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let restaurants of restaurants; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/restaurants', restaurants.id, 'view']">{{ restaurants.id }}</a>
-          </td>
-          <td>{{ restaurants.location }}</td>
-          <td>{{ restaurants.name }}</td>
-          <td>{{ restaurants.description }}</td>
-          <td>
-            <a
-              *ngIf="restaurants.image"
-              (click)="openFile(restaurants.image, restaurants.imageContentType)"
-              jhiTranslate="entity.action.open"
-              >open</a
-            >
-            <span *ngIf="restaurants.image">{{ restaurants.imageContentType }}, {{ byteSize(restaurants.image) }}</span>
-          </td>
-          <td>
-            <div *ngIf="restaurants.mese">
-              <a [routerLink]="['/mese', restaurants.mese?.id, 'view']">{{ restaurants.mese?.id }}</a>
-            </div>
-          </td>
-          <td class="text-right">
-            <div class="btn-group">
-              <button
-                type="submit"
-                [routerLink]="['/restaurants', restaurants.id, 'view']"
-                class="btn btn-info btn-sm"
-                data-cy="entityDetailsButton"
-              >
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-              </button>
+  <div id="entities" *ngIf="restaurants && restaurants.length > 0">
+    <!--    <table class="table table-striped" aria-describedby="page-heading">-->
+    <!--      <thead>-->
+    <!--        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">-->
+    <!--          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
+    <!--          <th scope="col" jhiSortBy="location">-->
+    <!--            <span jhiTranslate="restaurantReservationApp.restaurants.location">Location</span> <fa-icon icon="sort"></fa-icon>-->
+    <!--          </th>-->
+    <!--          <th scope="col" jhiSortBy="name">-->
+    <!--            <span jhiTranslate="restaurantReservationApp.restaurants.name">Name</span> <fa-icon icon="sort"></fa-icon>-->
+    <!--          </th>-->
+    <!--          <th scope="col" jhiSortBy="description">-->
+    <!--            <span jhiTranslate="restaurantReservationApp.restaurants.description">Description</span> <fa-icon icon="sort"></fa-icon>-->
+    <!--          </th>-->
+    <!--          <th scope="col" jhiSortBy="image">-->
+    <!--            <span jhiTranslate="restaurantReservationApp.restaurants.image">Image</span> <fa-icon icon="sort"></fa-icon>-->
+    <!--          </th>-->
+    <!--          <th scope="col" jhiSortBy="mese.id">-->
+    <!--            <span jhiTranslate="restaurantReservationApp.restaurants.mese">Mese</span> <fa-icon icon="sort"></fa-icon>-->
+    <!--          </th>-->
+    <!--          <th scope="col"></th>-->
+    <!--        </tr>-->
+    <!--      </thead>-->
+    <!--      <tbody>-->
+    <!--        <tr *ngFor="let restaurants of restaurants; trackBy: trackId" data-cy="entityTable">-->
+    <!--          <td>-->
+    <!--            <a [routerLink]="['/restaurants', restaurants.id, 'view']">{{ restaurants.id }}</a>-->
+    <!--          </td>-->
+    <!--          <td>{{ restaurants.location }}</td>-->
+    <!--          <td>{{ restaurants.name }}</td>-->
+    <!--          <td>{{ restaurants.description }}</td>-->
+    <!--          <td>-->
+    <!--            <a-->
+    <!--              *ngIf="restaurants.image"-->
+    <!--              (click)="openFile(restaurants.image, restaurants.imageContentType)"-->
+    <!--              jhiTranslate="entity.action.open"-->
+    <!--              >open</a-->
+    <!--            >-->
+    <!--            <span *ngIf="restaurants.image">{{ restaurants.imageContentType }}, {{ byteSize(restaurants.image) }}</span>-->
+    <!--          </td>-->
+    <!--          <td>-->
+    <!--            <div *ngIf="restaurants.mese">-->
+    <!--              <a [routerLink]="['/mese', restaurants.mese?.id, 'view']">{{ restaurants.mese?.id }}</a>-->
+    <!--            </div>-->
+    <!--          </td>-->
+    <!--          <td class="text-right">-->
+    <!--            <div class="btn-group">-->
+    <!--              <button-->
+    <!--                type="submit"-->
+    <!--                [routerLink]="['/restaurants', restaurants.id, 'view']"-->
+    <!--                class="btn btn-info btn-sm"-->
+    <!--                data-cy="entityDetailsButton"-->
+    <!--              >-->
+    <!--                <fa-icon icon="eye"></fa-icon>-->
+    <!--                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
+    <!--              </button>-->
 
-              <button
-                type="submit"
-                [routerLink]="['/restaurants', restaurants.id, 'edit']"
-                class="btn btn-primary btn-sm"
-                data-cy="entityEditButton"
-              >
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-              </button>
+    <!--              <button-->
+    <!--                type="submit"-->
+    <!--                [routerLink]="['/restaurants', restaurants.id, 'edit']"-->
+    <!--                class="btn btn-primary btn-sm"-->
+    <!--                data-cy="entityEditButton"-->
+    <!--              >-->
+    <!--                <fa-icon icon="pencil-alt"></fa-icon>-->
+    <!--                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>-->
+    <!--              </button>-->
 
-              <button type="submit" (click)="delete(restaurants)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!--              <button type="submit" (click)="delete(restaurants)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">-->
+    <!--                <fa-icon icon="times"></fa-icon>-->
+    <!--                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>-->
+    <!--              </button>-->
+    <!--            </div>-->
+    <!--          </td>-->
+    <!--        </tr>-->
+    <!--      </tbody>-->
+    <!--    </table>-->
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+      </mat-form-field>
+    </form>
+
+    <div class="restaurant-container">
+      <mat-card class="restaurant-item" *ngFor="let restaurant of restaurants; trackBy: trackId" data-cy="entityTable">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ restaurant.name }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="https://d2fdt3nym3n14p.cloudfront.net/venue/1910/gallery/4630/conversions/aroma-restaurant-11835-big.jpg"
+          alt="Photo of the restaurant"
+        />
+        <mat-card-content>
+          <p>
+            {{ restaurant.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button jhiTranslate="restaurantReservationApp.restaurants.home.reserve">RESERVE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 
   <div *ngIf="restaurants && restaurants.length > 0">

@@ -1,0 +1,11 @@
+.restaurant-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.restaurant-item {
+  width: 600px;
+  height: 400px;
+  margin: 20px;
+}
