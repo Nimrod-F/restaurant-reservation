@@ -85,6 +85,10 @@ export class RestaurantsComponent implements OnInit {
     });
   }
 
+  convertImage(blob: any) {
+    return `data:image/png;base64,${blob}`;
+  }
+
   protected sort(): string[] {
     const result = [this.predicate + ',' + (this.ascending ? ASC : DESC)];
     if (this.predicate !== 'id') {
@@ -127,9 +131,4 @@ export class RestaurantsComponent implements OnInit {
   protected onError(): void {
     this.ngbPaginationPage = this.page ?? 1;
   }
-
-  // convertImage(blob : string) {
-  //   let objectURL = 'data:image/png;base64' + URL.createObjectURL(blob);
-  //   return this.sanitizer.bypassSecurityTrustUrl(objectURL);
-  // }
 }
