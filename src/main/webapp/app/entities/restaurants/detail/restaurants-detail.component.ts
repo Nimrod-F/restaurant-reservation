@@ -7,6 +7,7 @@ import { DataUtils } from 'app/core/util/data-util.service';
 @Component({
   selector: 'jhi-restaurants-detail',
   templateUrl: './restaurants-detail.component.html',
+  styleUrls: ['./restaurants-detail.component.scss'],
 })
 export class RestaurantsDetailComponent implements OnInit {
   restaurants: IRestaurants | null = null;
@@ -29,5 +30,13 @@ export class RestaurantsDetailComponent implements OnInit {
 
   previousState(): void {
     window.history.back();
+  }
+
+  reserveTable(): void {
+    // TODO
+  }
+
+  convertImage(blob: any) {
+    return `data:image/png;base64,${blob}`;
   }
 }
