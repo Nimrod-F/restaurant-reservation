@@ -19,9 +19,9 @@
         "title": "Restaurants"
       },
       "id": "ID",
-      "location": "Location",
+      "location": "Locatie",
       "name": "Name",
-      "description": "Description",
+      "description": "Descriere",
       "image": "Image",
       "mese": "Mese"
     }

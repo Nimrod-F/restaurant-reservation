@@ -2,10 +2,34 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .restaurant-item {
-  width: 600px;
-  height: 400px;
-  margin: 20px;
+  width: 30%;
+  height: fit-content;
+  margin: 40px;
+  cursor: pointer;
+  transition-property: width;
+  transition-duration: 0.25s;
+  background-color: #f881251c;
+  box-shadow: 10px 5px 15px lightgray;
+
+  &:hover {
+    background-color: #f88125;
+    transition-property: width;
+    transition-duration: 0.25s;
+    box-shadow: 20px 15px 20px lightgray;
+    width: 35%;
+  }
+}
+
+.restaurant-image {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.restaurant-name {
+  font-size: 25pt;
+  font-weight: 600;
 }
