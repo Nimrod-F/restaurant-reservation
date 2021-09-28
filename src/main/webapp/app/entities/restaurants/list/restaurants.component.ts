@@ -11,6 +11,8 @@ import { RestaurantsService } from '../service/restaurants.service';
 import { RestaurantsDeleteDialogComponent } from '../delete/restaurants-delete-dialog.component';
 import { DataUtils } from 'app/core/util/data-util.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import {Authority} from "../../../config/authority.constants";
+import {AccountService} from "../../../core/auth/account.service";
 
 @Component({
   selector: 'jhi-restaurants',
@@ -28,6 +30,7 @@ export class RestaurantsComponent implements OnInit {
   ngbPaginationPage = 1;
 
   constructor(
+    private accountService: AccountService,
     protected restaurantsService: RestaurantsService,
     protected activatedRoute: ActivatedRoute,
     protected dataUtils: DataUtils,
@@ -65,7 +68,9 @@ export class RestaurantsComponent implements OnInit {
   trackId(index: number, item: IRestaurants): number {
     return item.id!;
   }
-
+  isAdmin() {
+    return this.accountService.hasAnyAuthority(Authority.ADMIN);
+  }
   byteSize(base64String: string): string {
     return this.dataUtils.byteSize(base64String);
   }

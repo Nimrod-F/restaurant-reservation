@@ -2,7 +2,7 @@
   "restaurantReservationApp": {
     "restaurants": {
       "home": {
-        "title": "Restaurants",
+        "title": "Restaurante",
         "refreshListLabel": "Refresh list",
         "createLabel": "Creeare o nouă entitate Restaurants",
         "createOrEditLabel": "Creeare sau editare Restaurants",

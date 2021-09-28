@@ -2,7 +2,7 @@
   <h2 id="page-heading" data-cy="RestaurantsHeading">
     <span jhiTranslate="restaurantReservationApp.restaurants.home.title">Restaurants</span>
 
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end" *ngIf="isAdmin()">
       <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="restaurantReservationApp.restaurants.home.refreshListLabel">Refresh List</span>
