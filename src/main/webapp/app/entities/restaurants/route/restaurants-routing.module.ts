@@ -13,8 +13,7 @@ const restaurantsRoute: Routes = [
     component: RestaurantsComponent,
     data: {
       defaultSort: 'id,asc',
-    },
-    canActivate: [UserRouteAccessService],
+    }
   },
   {
     path: ':id/view',
@@ -22,7 +21,6 @@ const restaurantsRoute: Routes = [
     resolve: {
       restaurants: RestaurantsRoutingResolveService,
     },
-    canActivate: [UserRouteAccessService],
   },
   {
     path: 'new',
