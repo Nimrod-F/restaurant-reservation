@@ -1,6 +1,5 @@
 id;location;name;description;image;image_content_type
-1;Calea Turzii nr 42;Restaurant Shanghai;Restaurant Shanghai este primul restaurant chinezesc din Cluj-Napoca, înființat în 1998. Vă oferim inclusiv la livrare mâncare chinezească proaspăt gătită.;../fake-data/blob/Shanghai.png;image/png
-2;Strada Georges Clemenceau nr 1;Klausen Pubhouse;Doresti sa iesi cu prietenii si sa te simti bine? La Klausen Pubhouse vei gasi o atmosfera demna de o seara de neuitat!;../fake-data/blob/Klausen.png;image/png
-3;Strada Andrei Șaguna nr 6;Old School Coffee House;Old School este un local prietenos, plin de fete zambitoare! Te asteptam la o cafea sau poate un ceai.;../fake-data/blob/Old.png;image/png
-4;Piata Muzeului nr 2;Marty;Pizzerie;../fake-data/blob/Marty.png;image/png
-
+1;Calea Turzii;Restaurant Sparanghel;Restaurant Sparanghel este primul restaurant chinezesc din Cluj-Napoca, înființat în 1998. Vă oferim inclusiv la livrare mâncare chinezească proaspăt gătită.;../fake-data/blob/Shanghai.png;image/png
+2;Strada Georges Clemenceau;Kiwi pub;Doresti sa iesi cu prietenii si sa te simti bine? La Kiwi vei gasi o atmosfera demna de o seara de neuitat!;../fake-data/blob/Klausen.png;image/png
+3;Strada Andrei Șaguna;Olive;Olive este un local prietenos, plin de fete zambitoare! Te asteptam la o cafea sau poate un ceai.;../fake-data/blob/Old.png;image/png
+4;Piata Muzeului;Martin;Pizzerie;../fake-data/blob/Marty.png;image/png
