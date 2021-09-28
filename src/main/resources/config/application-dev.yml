@@ -63,7 +63,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: myreservationro@gmail.com
-    password: ryjnnkaiilgpskjn
+    password: hstemjvhhfqbfdmp
     protocol: smtp
     tls: true
     properties.mail.smtp:

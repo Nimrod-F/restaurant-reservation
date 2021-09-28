@@ -21,7 +21,6 @@ const restaurantsRoute: Routes = [
     resolve: {
       restaurants: RestaurantsRoutingResolveService,
     },
-    canActivate: [UserRouteAccessService],
   },
   {
     path: 'new',

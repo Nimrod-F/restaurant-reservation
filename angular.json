@@ -109,6 +109,7 @@
   },
   "defaultProject": "restaurant-reservation",
   "cli": {
+    "analytics": "08521f27-48ee-4659-86a3-73ebc2aab406",
     "packageManager": "npm"
   }
 }
