@@ -12,14 +12,13 @@
   cursor: pointer;
   transition-property: width;
   transition-duration: 0.25s;
-  background-color: #f881251c;
-  box-shadow: 10px 5px 15px lightgray;
+  background-color: #f88125;
+  box-shadow: 10px 5px 15px #a0a0a0;
 
   &:hover {
-    background-color: #f88125;
     transition-property: width;
     transition-duration: 0.25s;
-    box-shadow: 20px 15px 20px lightgray;
+    box-shadow: 20px 15px 20px #a0a0a0;
     width: 35%;
   }
 }
@@ -32,4 +31,9 @@
 .restaurant-name {
   font-size: 25pt;
   font-weight: 600;
+}
+
+.reserve-button {
+  display: flex;
+  justify-content: center;
 }
