@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
 .restaurant-container {
   display: flex;
   width: 100%;
@@ -15,11 +19,19 @@
   background-color: #f88125;
   box-shadow: 10px 5px 15px #a0a0a0;
 
-  &:hover {
-    transition-property: width;
-    transition-duration: 0.25s;
-    box-shadow: 20px 15px 20px #a0a0a0;
-    width: 35%;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:hover {
+      transition-property: width;
+      transition-duration: 0.25s;
+      box-shadow: 20px 15px 20px #a0a0a0;
+      width: 35%;
+    }
   }
 }
 
@@ -31,6 +43,10 @@
 .restaurant-name {
   font-size: 25pt;
   font-weight: 600;
+
+  @include media-breakpoint-down(md) {
+    font-size: 20pt;
+  }
 }
 
 .reserve-button {
